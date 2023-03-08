@@ -105,7 +105,30 @@ body {
     border-radius: 12px;
 }
 
-/* /////////////HOVER////////////////////*/
+#input_buscar{
+    background-color: #18C29C;
+    border-style: none;
+    height: 49px;
+    border-radius: 12px;
+}
+
+::placeholder {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    color: black;
+}
+
+/* /////////////HOVER-FOCUS////////////////////*/
+
+#input_buscar:hover{
+    background-color: #17b391;
+    border-style: none;
+}
+
+#input_buscar:focus{
+    background-color: #8ED7C6;
+    outline: none;
+}
 
 .logo_menu img:hover{
     cursor: pointer;
