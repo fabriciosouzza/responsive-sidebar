@@ -38,6 +38,7 @@ body {
     border: none;
     width: 24px;
     height: 24px;
+    padding: 0px;
 }
 
 .options {
@@ -102,4 +103,26 @@ body {
     width: 45px;
     height: 45px;
     border-radius: 12px;
+}
+
+/* /////////////HOVER////////////////////*/
+
+.logo_menu img:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.options button:hover {
+    background-color: #17b391;
+    cursor: pointer;
+}
+
+#imgout1:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+#imgout2:hover{
+    transform: scale(1.1);
+    cursor: pointer;
 }
