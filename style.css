@@ -120,23 +120,13 @@ body {
 
 /* /////////////HOVER-FOCUS////////////////////*/
 
-#input_buscar:hover{
-    background-color: #17b391;
-    border-style: none;
-}
-
-#input_buscar:focus{
-    background-color: #8ED7C6;
-    outline: none;
-}
-
 .logo_menu img:hover{
     cursor: pointer;
     transform: scale(1.1);
 }
 
-.options button:hover {
-    background-color: #17b391;
+.btn:hover {
+    background-color: #17b391 !important;
     cursor: pointer;
 }
 
