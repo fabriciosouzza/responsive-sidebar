@@ -86,6 +86,14 @@ const userInfo = document.querySelector('.user_text')
 const sidebarPadding = document.querySelector('.sidebar')
 const logoutMargin = document.querySelector('.photo_logout')
 
+imgLogo.onclick = () => {
+    textMainContent.textContent = ""
+    for (let i = 0; i < optionsButton.length; i++) {
+        optionsButton[i].style.backgroundColor = "#18C29C"
+        optionsButton[i].classList.add("btn")
+    }
+}
+
 collapseButton.onclick = () => {
     if (collapseButton.classList.contains("enable")) {
         
