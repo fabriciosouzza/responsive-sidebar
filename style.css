@@ -47,7 +47,8 @@ body {
     margin: 14px;
 }
 
-.options > button, .settings {
+.options > button,
+.settings {
     display: flex;
     padding: 0px;
     padding-left: 13px;
@@ -57,7 +58,7 @@ body {
     border-radius: 12px;
     width: 100%;
     height: 51px;
-    flex-wrap: wrap;
+    padding-right: 3px;
 }
 
 .sub_menu {
@@ -67,9 +68,14 @@ body {
     width: 100%;
     margin-top: 0px;
     padding: 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: none;
+    flex-direction: column;  
+}
+
+.sub_menu > p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    padding-left: 50px;
 }
 
 .arrow_btn {
@@ -79,11 +85,13 @@ body {
     margin-left: auto;
 }
 
-.options > button > img, .settings > img {
+.options > button > img,
+.settings > img {
     margin-right: 13px;
 }
 
-.options > button > p, .settings > p {
+.options > button > p,
+.settings > p {
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
 }
@@ -139,6 +147,10 @@ body {
 }
 
 .arrow_btn:hover {
+    cursor: pointer;
+}
+
+.sub_menu > p:hover {
     cursor: pointer;
 }
 

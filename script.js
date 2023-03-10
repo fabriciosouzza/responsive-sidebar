@@ -100,23 +100,29 @@ collapseButton.onclick = () => {
         imgLogo.style.display = 'none'
         userImg.style.display = 'none'
         userInfo.style.display = 'none'
+        submenu.style.display = 'none'
+        submenuToggle.style.display = 'none'
+
 
         for (let i = 0; i < optionsButton.length; i++) {
             menuText[i].style.display = 'none'
+            optionsButton[i].style.paddingRight = '0px'
         }
         
         sidebarPadding.style.paddingRight = '0px'
         logoutMargin.style.marginRight = '0px'
         
-        collapseButton.classList.toggle("enable");
+        collapseButton.classList.toggle('enable');
     } else {
 
         imgLogo.style.display = 'block'
         userImg.style.display = 'block'
         userInfo.style.display = 'block'
+        submenuToggle.style.display = 'block'
 
         for (let i = 0; i < optionsButton.length; i++) {
             menuText[i].style.display = 'block'
+            optionsButton[i].style.paddingRight = '3px'
         }
 
         sidebarPadding.style.paddingRight = '14px'
@@ -126,10 +132,30 @@ collapseButton.onclick = () => {
     }
 }
 
+const submenuToggle = document.querySelector('.arrow_btn')
+
+const submenu = document.querySelector('.sub_menu')
 
 
 
-// .settings{
-//     border-bottom-left-radius: 0px;
-//     border-bottom-right-radius: 0px;
-// }
+submenuToggle.onclick = () => {
+
+    if (submenuToggle.classList.contains("enable")) {
+
+        buttonConfig.style.borderBottomLeftRadius = '0px'
+        buttonConfig.style.borderBottomRightRadius = '0px'
+        submenuToggle.style.transform = 'rotate(90deg)'
+
+        submenu.style.display = 'flex'
+        submenuToggle.classList.toggle("enable");
+    } else {
+        buttonConfig.style.borderBottomLeftRadius = '12px'
+        buttonConfig.style.borderBottomRightRadius = '12px'
+        
+        submenuToggle.style.transform = 'rotate(360deg)'
+        submenu.style.display = 'none'
+        submenuToggle.classList.toggle("enable");
+    }
+
+
+}
