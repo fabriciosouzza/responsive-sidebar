@@ -23,6 +23,7 @@ buttonSearch.onclick = () => {
         optionsButton[i].style.backgroundColor = "#18C29C"
         optionsButton[i].classList.add("btn")
     }
+    changeSubMenuOFF()
     buttonSearch.style.backgroundColor = "#8ED7C6"
     buttonSearch.classList.remove("btn");
 }
@@ -33,6 +34,7 @@ buttonDashboard.onclick = () => {
         optionsButton[i].style.backgroundColor = "#18C29C"
         optionsButton[i].classList.add("btn")
     }
+    changeSubMenuOFF()
     buttonDashboard.style.backgroundColor = "#8ED7C6"
     buttonDashboard.classList.remove("btn");
 }
@@ -43,6 +45,7 @@ buttonPets.onclick = () => {
         optionsButton[i].style.backgroundColor = "#18C29C"
         optionsButton[i].classList.add("btn")
     }
+    changeSubMenuOFF()
     buttonPets.style.backgroundColor = "#8ED7C6"
     buttonPets.classList.remove("btn");
 }
@@ -53,6 +56,7 @@ buttonClients.onclick = () => {
         optionsButton[i].style.backgroundColor = "#18C29C"
         optionsButton[i].classList.add("btn")
     }
+    changeSubMenuOFF()
     buttonClients.style.backgroundColor = "#8ED7C6"
     buttonClients.classList.remove("btn");
 }
@@ -63,6 +67,7 @@ buttonVets.onclick = () => {
         optionsButton[i].style.backgroundColor = "#18C29C"
         optionsButton[i].classList.add("btn")
     }
+    changeSubMenuOFF()
     buttonVets.style.backgroundColor = "#8ED7C6"
     buttonVets.classList.remove("btn");
 }
@@ -73,6 +78,15 @@ buttonConfig.onclick = () => {
         optionsButton[i].style.backgroundColor = "#18C29C"
         optionsButton[i].classList.add("btn")
     }
+
+    if (submenuToggle.classList.contains("enable")) {
+        if (collapseButton.classList.contains("enable")) {
+            changeSubMenuON()       
+        }
+    } else {
+        changeSubMenuOFF()
+    }
+
     buttonConfig.style.backgroundColor = "#8ED7C6"
     buttonConfig.classList.remove("btn");
 }
@@ -100,9 +114,8 @@ collapseButton.onclick = () => {
         imgLogo.style.display = 'none'
         userImg.style.display = 'none'
         userInfo.style.display = 'none'
-        submenu.style.display = 'none'
+        changeSubMenuOFF()
         submenuToggle.style.display = 'none'
-
 
         for (let i = 0; i < optionsButton.length; i++) {
             menuText[i].style.display = 'none'
@@ -137,25 +150,22 @@ const submenuToggle = document.querySelector('.arrow_btn')
 const submenu = document.querySelector('.sub_menu')
 
 
+function changeSubMenuON() {
+    buttonConfig.style.borderBottomLeftRadius = '0px'
+    buttonConfig.style.borderBottomRightRadius = '0px'
+    submenuToggle.style.display = 'block'
+    submenuToggle.style.transform = 'rotate(90deg)'
 
-submenuToggle.onclick = () => {
+    submenu.style.display = 'flex'
+    submenuToggle.classList.toggle("enable");
+}
 
-    if (submenuToggle.classList.contains("enable")) {
 
-        buttonConfig.style.borderBottomLeftRadius = '0px'
-        buttonConfig.style.borderBottomRightRadius = '0px'
-        submenuToggle.style.transform = 'rotate(90deg)'
-
-        submenu.style.display = 'flex'
-        submenuToggle.classList.toggle("enable");
-    } else {
-        buttonConfig.style.borderBottomLeftRadius = '12px'
-        buttonConfig.style.borderBottomRightRadius = '12px'
+function changeSubMenuOFF() {
+    buttonConfig.style.borderBottomLeftRadius = '12px'
+    buttonConfig.style.borderBottomRightRadius = '12px'
         
-        submenuToggle.style.transform = 'rotate(360deg)'
-        submenu.style.display = 'none'
-        submenuToggle.classList.toggle("enable");
-    }
-
-
+    submenuToggle.style.transform = 'rotate(360deg)'
+    submenu.style.display = 'none'
+    submenuToggle.classList.toggle("enable");
 }

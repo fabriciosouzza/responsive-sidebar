@@ -156,6 +156,9 @@ body {
 
 .btn:hover {
     background-color: #17b391 !important;
+}
+
+button:hover {
     cursor: pointer;
 }
 
