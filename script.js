@@ -77,11 +77,45 @@ buttonConfig.onclick = () => {
     buttonConfig.classList.remove("btn");
 }
 
-
-const collapseButton = document.querySelector('#collaspeBtn')
+///////////////////////////////////// COLLAPSE //////////////////////////////////////////////////
+const collapseButton = document.querySelector('.collaspeBtn')
+const menuText = document.querySelectorAll('.side_text')
+const imgLogo = document.querySelector('#logoimg')
+const userImg = document.querySelector('#imgout1')
+const userInfo = document.querySelector('.user_text')
+const sidebarPadding = document.querySelector('.sidebar')
+const logoutMargin = document.querySelector('.photo_logout')
 
 collapseButton.onclick = () => {
-    
+    if (collapseButton.classList.contains("enable")) {
+        
+        imgLogo.style.display = 'none'
+        userImg.style.display = 'none'
+        userInfo.style.display = 'none'
+
+        for (let i = 0; i < optionsButton.length; i++) {
+            menuText[i].style.display = 'none'
+        }
+        
+        sidebarPadding.style.paddingRight = '0px'
+        logoutMargin.style.marginRight = '0px'
+        
+        collapseButton.classList.toggle("enable");
+    } else {
+
+        imgLogo.style.display = 'block'
+        userImg.style.display = 'block'
+        userInfo.style.display = 'block'
+
+        for (let i = 0; i < optionsButton.length; i++) {
+            menuText[i].style.display = 'block'
+        }
+
+        sidebarPadding.style.paddingRight = '14px'
+        logoutMargin.style.marginRight = '-14px'
+        
+        collapseButton.classList.toggle("enable");
+    }
 }
 
 
