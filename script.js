@@ -1,14 +1,14 @@
-const buttonSearch = document.querySelector('.buscar')
+const buttonSearch = document.querySelector('.search')
 
 const buttonDashboard = document.querySelector(".dashboard")
 
 const buttonPets = document.querySelector('.pets')
 
-const buttonClients = document.querySelector('.clientes')
+const buttonClients = document.querySelector('.clients')
 
 const buttonVets = document.querySelector('.vets')
 
-const buttonConfig = document.querySelector('.ajustes')
+const buttonConfig = document.querySelector('.settings')
 
 
 
@@ -18,7 +18,7 @@ const optionsButton = document.querySelectorAll('.btn')
 
 
 buttonSearch.onclick = () => {
-    textMainContent.textContent = "Buscar"
+    textMainContent.textContent = "Search"
     for (let i = 0; i < optionsButton.length; i++) {
         optionsButton[i].style.backgroundColor = "#18C29C"
         optionsButton[i].classList.add("btn")
@@ -48,7 +48,7 @@ buttonPets.onclick = () => {
 }
 
 buttonClients.onclick = () => {
-    textMainContent.textContent = "Clientes"
+    textMainContent.textContent = "Clients"
     for (let i = 0; i < optionsButton.length; i++) {
         optionsButton[i].style.backgroundColor = "#18C29C"
         optionsButton[i].classList.add("btn")
@@ -68,7 +68,7 @@ buttonVets.onclick = () => {
 }
 
 buttonConfig.onclick = () => {
-    textMainContent.textContent = "Ajustes"
+    textMainContent.textContent = "Settings"
     for (let i = 0; i < optionsButton.length; i++) {
         optionsButton[i].style.backgroundColor = "#18C29C"
         optionsButton[i].classList.add("btn")
@@ -127,3 +127,9 @@ collapseButton.onclick = () => {
 }
 
 
+
+
+// .settings{
+//     border-bottom-left-radius: 0px;
+//     border-bottom-right-radius: 0px;
+// }
