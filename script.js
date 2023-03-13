@@ -1,17 +1,10 @@
 const buttonSearch = document.querySelector('.search')
-
 const buttonDashboard = document.querySelector(".dashboard")
-
 const buttonPets = document.querySelector('.pets')
-
 const buttonClients = document.querySelector('.clients')
-
 const buttonVets = document.querySelector('.vets')
-
 const buttonConfig = document.querySelector('.settings')
-
 const textMainContent = document.getElementById("section_title")
-
 const optionsButton = document.querySelectorAll('.btn')
 
 
@@ -47,7 +40,9 @@ buttonPets.onclick = () => {
         optionsButton[i].style.backgroundColor = "#18C29C"
         optionsButton[i].classList.add("btn")
     }
-    changeSubMenuOFF()
+    if (!submenuToggle.classList.contains("enable")) {
+        changeSubMenuOFF()     
+    }
     buttonPets.style.backgroundColor = "#8ED7C6"
     buttonPets.classList.remove("btn");
 }
@@ -88,6 +83,7 @@ buttonConfig.onclick = () => {
 
     if (submenuToggle.classList.contains("enable") && collapseButton.classList.contains("enable")) {
         changeSubMenuON()     
+    } else if (!collapseButton.classList.contains("enable")) {
     } else {
         changeSubMenuOFF()
     }
@@ -105,11 +101,17 @@ const userInfo = document.querySelector('.user_text')
 const sidebarPadding = document.querySelector('.sidebar')
 const logoutMargin = document.querySelector('.photo_logout')
 
+const submenuToggle = document.querySelector('.arrow_btn')
+const submenu = document.querySelector('.sub_menu')
+
 imgLogo.onclick = () => {
     textMainContent.textContent = ""
     for (let i = 0; i < optionsButton.length; i++) {
         optionsButton[i].style.backgroundColor = "#18C29C"
         optionsButton[i].classList.add("btn")
+    }
+    if (!submenuToggle.classList.contains("enable")) {
+        changeSubMenuOFF()     
     }
 }
 
@@ -119,7 +121,9 @@ collapseButton.onclick = () => {
         imgLogo.style.display = 'none'
         userImg.style.display = 'none'
         userInfo.style.display = 'none'
-        changeSubMenuOFF()
+        if (!submenuToggle.classList.contains("enable")) {
+            changeSubMenuOFF()     
+        }
         submenuToggle.style.display = 'none'
 
         for (let i = 0; i < optionsButton.length; i++) {
@@ -149,10 +153,6 @@ collapseButton.onclick = () => {
         collapseButton.classList.toggle("enable");
     }
 }
-
-const submenuToggle = document.querySelector('.arrow_btn')
-const submenu = document.querySelector('.sub_menu')
-
 
 function changeSubMenuON() {
     buttonConfig.style.borderBottomLeftRadius = '0px'
