@@ -10,8 +10,6 @@ const buttonVets = document.querySelector('.vets')
 
 const buttonConfig = document.querySelector('.settings')
 
-
-
 const textMainContent = document.getElementById("section_title")
 
 const optionsButton = document.querySelectorAll('.btn')
@@ -23,7 +21,9 @@ buttonSearch.onclick = () => {
         optionsButton[i].style.backgroundColor = "#18C29C"
         optionsButton[i].classList.add("btn")
     }
-    changeSubMenuOFF()
+    if (!submenuToggle.classList.contains("enable")) {
+        changeSubMenuOFF()     
+    }
     buttonSearch.style.backgroundColor = "#8ED7C6"
     buttonSearch.classList.remove("btn");
 }
@@ -34,7 +34,9 @@ buttonDashboard.onclick = () => {
         optionsButton[i].style.backgroundColor = "#18C29C"
         optionsButton[i].classList.add("btn")
     }
-    changeSubMenuOFF()
+    if (!submenuToggle.classList.contains("enable")) {
+        changeSubMenuOFF()     
+    }
     buttonDashboard.style.backgroundColor = "#8ED7C6"
     buttonDashboard.classList.remove("btn");
 }
@@ -56,7 +58,9 @@ buttonClients.onclick = () => {
         optionsButton[i].style.backgroundColor = "#18C29C"
         optionsButton[i].classList.add("btn")
     }
-    changeSubMenuOFF()
+    if (!submenuToggle.classList.contains("enable")) {
+        changeSubMenuOFF()     
+    }
     buttonClients.style.backgroundColor = "#8ED7C6"
     buttonClients.classList.remove("btn");
 }
@@ -67,7 +71,10 @@ buttonVets.onclick = () => {
         optionsButton[i].style.backgroundColor = "#18C29C"
         optionsButton[i].classList.add("btn")
     }
-    changeSubMenuOFF()
+
+    if (!submenuToggle.classList.contains("enable")) {
+        changeSubMenuOFF()     
+    }
     buttonVets.style.backgroundColor = "#8ED7C6"
     buttonVets.classList.remove("btn");
 }
@@ -79,10 +86,8 @@ buttonConfig.onclick = () => {
         optionsButton[i].classList.add("btn")
     }
 
-    if (submenuToggle.classList.contains("enable")) {
-        if (collapseButton.classList.contains("enable")) {
-            changeSubMenuON()       
-        }
+    if (submenuToggle.classList.contains("enable") && collapseButton.classList.contains("enable")) {
+        changeSubMenuON()     
     } else {
         changeSubMenuOFF()
     }
@@ -91,7 +96,7 @@ buttonConfig.onclick = () => {
     buttonConfig.classList.remove("btn");
 }
 
-///////////////////////////////////// COLLAPSE //////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////// COLLAPSE //////////////////////////////////////////////////////////////////
 const collapseButton = document.querySelector('.collaspeBtn')
 const menuText = document.querySelectorAll('.side_text')
 const imgLogo = document.querySelector('#logoimg')
@@ -146,7 +151,6 @@ collapseButton.onclick = () => {
 }
 
 const submenuToggle = document.querySelector('.arrow_btn')
-
 const submenu = document.querySelector('.sub_menu')
 
 
@@ -157,7 +161,7 @@ function changeSubMenuON() {
     submenuToggle.style.transform = 'rotate(90deg)'
 
     submenu.style.display = 'flex'
-    submenuToggle.classList.toggle("enable");
+    submenuToggle.classList.toggle("enable");  
 }
 
 
@@ -167,5 +171,5 @@ function changeSubMenuOFF() {
         
     submenuToggle.style.transform = 'rotate(360deg)'
     submenu.style.display = 'none'
-    submenuToggle.classList.toggle("enable");
+    submenuToggle.classList.toggle("enable");  
 }
